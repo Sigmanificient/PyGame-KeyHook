@@ -5,7 +5,7 @@ import win32gui
 from app import Color
 
 
-def setup(hwnd: Color, alpha_color) -> None:
+def setup(hwnd: int, alpha_color: Color) -> None:
     """Set the windows in alpha and no-clip mode."""
     win_long = win32gui.GetWindowLong(
         hwnd,
