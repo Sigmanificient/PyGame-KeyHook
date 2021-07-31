@@ -1,0 +1,62 @@
+ctrl_l left ctrl
+ctrl_r right ctrl
+alt_l left alt
+cmd window
+\x01 ctrl a
+\x02 ctrl b
+\x03 ctrl c
+\x04 ctrl d
+\x05 ctrl e
+\x06 ctrl f
+\x07 ctrl g
+\x08 ctrl h
+\t ctrl i
+\n ctrl j
+\x0b ctrl k
+\x0c ctrl l
+\r ctrl m
+\x0e ctrl n
+\x0f ctrl o
+\x11 ctrl p
+\x12 ctrl r
+\x13 ctrl s
+\x14 ctrl t
+\x15 ctrl u
+\x16 ctrl v
+\x17 ctrl w
+\x18 ctrl x
+\x19 ctrl y
+\x1a ctrl z
+<49> ctrl 1
+<50> ctrl 2
+<51> ctrl 3
+<52> ctrl 4
+<53> ctrl 5
+<54> ctrl 6
+<55> ctrl 7
+<56> ctrl 8
+<57> ctrl 9
+\x00 ctrl 0
+<96> 0
+<97> 1
+<98> 2
+<99> 3
+<100> 4
+<101> 5
+<102> 6
+<103> 7
+<104> 8
+<105> 9
+<106> ctrl *
+<107> ctrl +
+<109> ctrl -
+<110> ctrl .
+<111> ctrl /
+<188> ctrl ,
+<190> ctrl .
+<191> ctrl :
+<223> ctrl !
+\x17 ctrl <
+<226> ctrl >
+\\ \
+Space
