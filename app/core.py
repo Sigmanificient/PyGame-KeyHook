@@ -2,6 +2,8 @@ import pygame
 from app.transparancy import setup
 from app import ALPHA, WHITE
 
+from pynput.keyboard import Listener
+
 pygame.init()
 
 
@@ -25,7 +27,10 @@ class AppCore:
 
         self.bubbles = ["App Started"]
         self.font = pygame.font.SysFont("Consolas", 32)
+
         self.refresh = pygame.USEREVENT + 1
+        self.refresh_event = pygame.event.Event(self.refresh)
+
         self.is_running = False
 
     def handle_event(self, event):
@@ -40,12 +45,17 @@ class AppCore:
         if not len(self.bubbles):
             return
 
-        for word in self.bubbles:
-            text = self.font.render(word, True, ALPHA)
+        self.screen.fill(ALPHA)
+
+        offset = 0
+        for word in self.bubbles[-3:]:
+            text = self.font.render(str(word), True, ALPHA)
             text_rect = text.get_rect()
 
-            text_rect.right = self.screen.get_width() - 20
+            text_rect.right = self.screen.get_width() - 20 - offset
             text_rect.bottom = self.screen.get_height() - 60
+
+            offset += (text_rect.width + 40)
 
             pygame.draw.rect(
                 self.screen,
@@ -63,10 +73,16 @@ class AppCore:
 
             pygame.display.update()
 
+    def on_press(self, key_name):
+        self.bubbles.append(key_name)
+        pygame.event.post(self.refresh_event)
+
     def run(self):
-        pygame.time.set_timer(self.refresh, 500)
+        listener = Listener(on_press=self.on_press)
+        listener.start()
+
+        pygame.event.post(self.refresh_event)
         self.is_running = True
 
         while self.is_running:
             self.handle_event(pygame.event.wait())
-            print("r")
