@@ -1,0 +1,6 @@
+# PyCharm configuration files
+.idea
+
+# Python
+__pychache__
+venv
